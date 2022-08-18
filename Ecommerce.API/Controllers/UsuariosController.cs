@@ -49,7 +49,14 @@ namespace Ecommerce.API.Controllers
         [HttpPut]
         public IActionResult Update([FromBody] Usuario usuario)
         {
+            try
+            {
             _repositorios.Update(usuario);
+
+            }catch(Exception ex)
+            {
+                return BadRequest("" + ex.Message);
+            }
 
             return Ok(usuario);
         }
