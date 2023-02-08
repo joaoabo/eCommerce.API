@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.API.Repositorios
 {
-    interface IUsuarioRepositorios
+    interface IClienteRepositorios
     {
-        public List<Usuario> Get();
-        public Usuario Get(int id);
-        public void Insert(Usuario usuario);
-        public void Update(Usuario usuario);
+        public List<Clientes> Get();
+        public Clientes Get(int id);
+        public void Insert(Clientes cliente);
+        public void Update(Clientes cliente);
         public void Delete(int id);
     }
 }

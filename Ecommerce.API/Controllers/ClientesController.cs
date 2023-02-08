@@ -11,54 +11,54 @@ namespace Ecommerce.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class UsuariosController : ControllerBase
+    public class ClientesController : ControllerBase
     {
-        private IUsuarioRepositorios _repositorios;
+        private IClienteRepositorios _repositorios;
 
-        public UsuariosController()
+        public ClientesController()
         {
-            _repositorios = new Usuariorepositorios();
+            _repositorios = new ClienteRepositorios();
         }
 
         [HttpGet]
-        public IActionResult GetUsuarios()
+        public IActionResult GetCliente()
         {
             return Ok(_repositorios.Get());
         }
 
         [HttpGet("{id}")]
 
-        public IActionResult GetUsuario(int id)
+        public IActionResult GetCliente(int id)
         {
-            var usuario = _repositorios.Get(id);
-            if( usuario == null)
+            var cliente = _repositorios.Get(id);
+            if(cliente == null)
             {
                 return NotFound();
             }
-            return Ok(usuario);
+            return Ok(cliente);
 
         }
 
         [HttpPost]
-        public IActionResult Insert([FromBody]Usuario usuario)
+        public IActionResult Insert([FromBody]Clientes cliente)
         {
-            _repositorios.Insert(usuario);
-            return Ok(usuario);
+            _repositorios.Insert(cliente);
+            return Ok(cliente);
         }
 
         [HttpPut]
-        public IActionResult Update([FromBody] Usuario usuario)
+        public IActionResult Update([FromBody] Clientes cliente)
         {
             try
             {
-            _repositorios.Update(usuario);
+            _repositorios.Update(cliente);
 
             }catch(Exception ex)
             {
                 return BadRequest("" + ex.Message);
             }
 
-            return Ok(usuario);
+            return Ok(cliente);
         }
 
         [HttpDelete("{id}")]

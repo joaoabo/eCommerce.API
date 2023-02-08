@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Ecommerce.API.Models
 {
-    public class Usuario
+    public class Clientes
     {
         public int Id { get; set; }
         public string Nome { get; set; }
@@ -18,7 +18,7 @@ namespace Ecommerce.API.Models
         public DateTimeOffset DataCadastro { get; set; }
         public Contato Contato { get; set; }
         public ICollection<EnderecoEntrega> EnderecosEntrega { get; set; }
-        public ICollection<Departamemto> Departamemtos { get; set; }
+        public ICollection<Departamento> Departamentos { get; set; }
 
 
     }

@@ -8,7 +8,7 @@ namespace Ecommerce.API.Models
     public class EnderecoEntrega
     {
         public int Id { get; set; }
-        public int UsuarioId { get; set; }
+        public int ClienteId { get; set; }
         public string NomeEndereco { get; set; }
         public string CEP { get; set; }
         public string Estado { get; set; }
@@ -17,7 +17,7 @@ namespace Ecommerce.API.Models
         public string Endereco { get; set; }
         public string Numero { get; set; }
         public string Complemento { get; set; }
-        public Usuario Usuario { get; set; }
+        public Clientes Cliente { get; set; }
 
     }
 }
